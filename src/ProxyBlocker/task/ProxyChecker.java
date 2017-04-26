@@ -39,7 +39,6 @@ public class ProxyChecker extends AsyncTask {
             e.printStackTrace();
         }
         boolean check = object.getAsJsonObject().get("proxy").getAsInt() == 1;
-        System.out.println(check);
         String msg = TextFormat.GOLD + "Please turn your VPN off if you want to continue playing.";
         this.setResult(new InfoEntry(check, new String(new char[new Double(msg.length() / 2.25).intValue()]).replace("\0", " ") + TextFormat.RED + "VPN Detected.\n" + msg, TextFormat.ITALIC + (TextFormat.GRAY + "Kicked " + TextFormat.AQUA + data[1] + TextFormat.GRAY + " for using a proxy.")));
     }
