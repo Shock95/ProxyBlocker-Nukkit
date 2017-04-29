@@ -13,6 +13,7 @@ public class Main extends PluginBase {
     private String email;
 
     public void onEnable() {
+        this.getDataFolder().mkdir();
         this.saveDefaultConfig();
         (this.server = this.getServer()).getPluginManager().registerEvents(new EventListener(this), this);
         this.server.getLogger().info("ProxyBlocker is now enabled.");
